@@ -50,15 +50,22 @@ public class IndexPageSteps
 	@Then("user get on jobs detailed page and verify the information details")
 	public void user_get_on_jobs_detailed_page_and_verify_the_information_details()
 	{
-	     System.out.println("Step 4: User verify the job information details ");
-	    String JobTitle = jobDetailpageObj.getJobDetailsPageTite();
-	    System.out.println("Job title is " + JobTitle);
-	     String JobtitleTxtIsDisplayed = jobDetailpageObj.getJobTitleTxt();
-	     System.out.println("Job Title text is Displayed " + JobtitleTxtIsDisplayed);
+	    System.out.println("Step 4: User verify the job information details ");
+	    String Exp_JobTitle = jobDetailpageObj.getJobDetailsPageTite();
+	    Assert.assertEquals(Exp_JobTitle, "TRADEME SANDBOX - Buy online and sell with NZ's #1 auction & classifieds site | Trade Me SANDBOX");
+	    System.out.println("Job title is " + Exp_JobTitle);
+	     
+	    String JobtitleTxtIsDisplayed = jobDetailpageObj.getJobTitleTxt();
+	    System.out.println("Job Title text is Displayed " + JobtitleTxtIsDisplayed);
+	    Assert.assertEquals(JobtitleTxtIsDisplayed,"Plumber");
+	     
 	     String companyName = jobDetailpageObj.companyNameIsDisplayed();
 	     System.out.println("Company name is " + companyName);
+	     Assert.assertEquals(companyName,"Halo Industries");
+	     
 	     String Joblocation = jobDetailpageObj.jobLocation();
 	     System.out.println("Job location is " + Joblocation);
+	     Assert.assertEquals(Joblocation,"Tauranga, Bay Of Plenty");
 	     
 	}
 
